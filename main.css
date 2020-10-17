@@ -1,0 +1,261 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+:root {
+  --red: #e84750;
+  --orange: #f5a336;
+  --yellow: #ffdb00;
+  --green: #54ae37;
+  --blue: #00a8de;
+  --purple: #854794;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* styles for the SVG chart */
+svg {
+  margin: 20px;
+}
+
+#chart-wrapper {
+  width: 60%;
+  margin-left: 40%;
+  border: 1px solid black;
+}
+
+/* styles for the scrolling text boxes */
+.active {
+  opacity: 1 !important;
+}
+
+.step {
+  font-family: 'Nunito Sans';
+  width: 30%;
+  padding: 20px;
+  margin-right: 70%;
+  margin-left: 30px;
+  margin-bottom: 60vh;
+  border: 5px solid purple;
+  border-radius: 20px;
+  opacity: 0.2;
+}
+
+/* styles for the scrubbing animation */
+.scrub-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 200vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  pointer-events: none;
+}
+.stack {
+  position: absolute;
+  display: block;
+}
+
+.red {
+  color: var(--red);
+}
+.orange {
+  color: var(--orange);
+}
+.yellow {
+  color: var(--yellow);
+}
+.green {
+  color: var(--green);
+}
+.blue {
+  color: var(--blue);
+}
+.purple {
+  color: var(--purple);
+}
+
+/* #################################################################################################### */
+/* These are just styles for the page content, they have nothing to do with the scrolling or animations */
+/* #################################################################################################### */
+
+h1 {
+  font-family: 'Bungee', sans-serif;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 6rem;
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+  max-width: 700px;
+  line-height: 1.4em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.heading-wrapper {
+  position: relative;
+  max-width: 1200px;
+  height: 400px;
+  margin: auto;
+}
+
+.heading-1 {
+  top: 0;
+  left: 0;
+}
+.heading-2 {
+  top: 5px;
+  left: 5px;
+}
+.heading-3 {
+  top: 10px;
+  left: 10px;
+}
+.heading-4 {
+  top: 15px;
+  left: 15px;
+}
+.heading-5 {
+  top: 20px;
+  left: 20px;
+}
+.heading-6 {
+  top: 25px;
+  left: 25px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.text-centered {
+  max-width: 700px;
+  margin: auto;
+}
+
+.code {
+  font-family: 'Ubuntu Mono', monospace;
+  color: var(--purple);
+  background-color: #f4f7fc;
+}
+
+pre {
+  margin: 0;
+  font-size: 0.85rem;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+code {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+   -ms-user-select: all;
+       user-select: all;
+  display: block;
+  padding: 20px;
+  margin-top: 1rem;
+  color: var(--purple);
+  background-color: #f4f7fc;
+  text-align: left;
+  font-family: inherit;
+  overflow: auto;
+}
+
+#checkbox-wrapper {
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  z-index: 100;
+}
+.collapse {
+  font-family: 'Nunito Sans';
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--purple);
+  cursor: pointer;
+  text-align: center;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+.checkbox {
+  display: none;
+}
+.checkbox-group {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 12rem;
+  height: 0px;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+.check-label {
+  font-family: 'Nunito Sans';
+  color: var(--blue);
+  display: block;
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.check-label:after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  right: -1rem;
+  top: 0.375rem;
+  position: absolute;
+  background: transparent;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  border: 0.3rem solid var(--red);
+  border-left: none;
+  border-bottom: none;
+  opacity: 0;
+}
+.check-label:before {
+  content: '';
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid black;
+  background: white;
+  position: absolute;
+  right: 0.5rem;
+}
+.checkbox + .check-label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked + .check-label:after {
+  opacity: 1;
+  right: 0.25rem;
+  width: 1rem;
+  height: 0.5rem;
+  border-radius: 0;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
